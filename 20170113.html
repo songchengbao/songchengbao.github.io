@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>宋小宝总结</title>
+	</head>
+	<body>
+	   <h1><a href="">canvas画布</a></h1>
+	   <h3>canvas画布总结</h3>
+	   <p>canvas是HTML5中新增的标签，用于绘制图形，实际上，这个标签和其他的标签一样，其特殊之处</p>
+	   <p>在于该标签可以获取一个CanvasRenderingContext2D对象，我们可以通过JavaScript脚本来控制该对象进行绘</p>
+	   <p>图。</p>
+	   <p>canvas只是一个绘制图形的容器，除了id、class、style等属性外，还有height和width属性。在</p>
+	   <p>canvas元素上绘图主要有三步：</p>
+	   <p>1、获取canvas元素对应的DOM对象，这是一个Canvas对象；</p>
+	   <p>2、调用Canvas对象的getContext()方法，得到一个CanvasRenderingContext2D对象；</p>
+	   <p>3、调用CanvasRenderingContext2D对象进行绘图。</p>
+	   <h4>一、线条属性 </h4>
+	   <p>除了lineWidth属性，线条还有以下几个属性：</p>
+	   <h4>lineCap 属性设置或返回线条末端线帽的样式，可以取以下几个值：</h4>
+	   <p>“butt” 向线条的每个末端添加平直的边缘（默认）；</p>
+	   <p>“round” 向线条的每个末端添加圆形线帽； </p>
+	   <p>“square” 向线条的每个末端添加正方形线帽。</p>
+	   <h4>lineJoin 属性当两条线交汇时设置或返回所创建边角的类型，可以取以下几个值： </h4>
+	   <p>“miter” 创建尖角(默认)； </p>
+	   <p>“bevel” 创建斜角； </p>
+	   <p>“round” 创建圆角。</p>
+       <br />  
+       <h4>miterLimit 属性设置或返回最大斜接长度（默认为10）。斜接长度指的是在两条线交汇处内角和外角之间</h4>
+       <h4>的距离。只有当 lineJoin 属性为 “miter” 时，miterLimit 才有效。</h4>
+       <h4>二、图形变换</h4>
+	   <p>平移：context.translate(x,y)，接收参数分别为原点在x轴方向平移x，在y轴方向平移y。</p>
+	   <p>缩放：context.scale(x,y)，接收参数分别为x坐标轴按x比例缩放，y坐标轴按y比例缩放。</p>
+	   <p>旋转：context.rotate(angle)，接收参数是坐标轴旋转的角度。</p>
+	   <h4>三、文字渲染</h4>
+	   <p>与文本渲染有关的主要有三个属性以及三个方法：</p>
+	   <p>属性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;描述</p>
+	   <p>font&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设置或返回文本内容的当前字体属性</p>
+	   <p>textAlign&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;设置或返回文本内容的当前对齐方式</p>
+	   <p>textBaseline&nbsp;&nbsp;    设置或返回在绘制文本时使用的当前文本基线 </p>
+	   <p>方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;描述</p>
+	   <p>fillText()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在画布上绘制”被填充的”文本</p>
+	   <p>strokeText()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在画布上绘制文本（无填充）</p>
+	   <p>measureText()&nbsp;&nbsp;&nbsp;&nbsp;返回包含指定文本宽度的对象</p>
+	   <br />   
+       <h4>四、阴影绘制：</h4>
+       <p>shadowColor 设置或返回用于阴影的颜色。</p>
+       <p>shadowBlur 设置或返回用于阴影的模糊级别（数值越大越模糊）。 </p>
+       <p>shadowOffsetX 设置或返回阴影与形状的水平距离。 </p>
+       <p>shadowOffsetY 设置或返回阴影与形状的垂直距离。 </p>
+       <h4>五、图形组合：</h4>
+       <p>globalAlpha： 设置或返回绘图的当前 alpha 或透明值 </p>
+       <p>该方法主要是设置图形的透明度，这里就不具体介绍。</p>
+       <p>globalCompositeOperation： 设置或返回新图像如何绘制到已有的图像上，该方法有以下属性值：</p>
+       <p>值&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;描述</p>
+       <p>source-over&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在目标图像上显示源图像（默认）</p>
+       <p>source-atop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在目标图像顶部显示源图像。源图像位于目标图像之外的部分是不可见的</p>
+       <p>source-in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在目标图像中显示源图像。只有目标图像之内的源图像部分会显示，目标图像是透明的</p>
+       <p>source-out&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在目标图像之外显示源图像。只有目标图像之外的源图像部分会显示，目标图像是透明的</p>
+       <p>destination-over&nbsp;&nbsp;在源图像上显示目标图像</p>
+       <p>destination-atop&nbsp;&nbsp;在源图像顶部显示目标图像。目标图像位于源图像之外的部分是不可见的</p>
+       <p>destination-in&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在源图像中显示目标图像。只有源图像之内的目标图像部分会被显示，源图像是透明的</p>
+       <p>destination-out&nbsp;&nbsp;&nbsp;&nbsp;在源图像之外显示目标图像。只有源图像之外的目标图像部分会被显示，源图像是透明的</p>
+       <p>lighter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示源图像 + 目标图像</p>
+       <p>copy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示源图像。忽略目标图像</p>
+       <p>xor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用异或操作对源图像与目标图像进行组合</p>
+	</body>
+</html>
