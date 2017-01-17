@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>宋小宝总结</title>
+	</head>
+	<body>
+       <h3>Audio对象总结</h3>
+       <p>HTML5 中的audio对象提供可用于通过JavaScript控制播放的方法、属性以及事件。</p>
+       <h4>在JavaScript中播放和暂停音频播放</h4>
+       <p>使用HTML5 audio元素可向网页中添加音频，而无需使用外部控件或程序。但是，除非你的网页只需要一个简单的音频播放器，否则你很可能想对加载的音频文件及其播放拥有更多的控制。若要将audio元素与 JavaScript 结合使用，
+       	请定义audio标记，该标记具有 "ID" 并且可以选择省略其他所有内容。你可以显示或隐藏内置控件，或将音频设置为在页面加载时自动播放。使用 JavaScript，你仍然可以执行该操作并且还可以执行进一步操作。</p>
+       <p>在 JavaScript 部分中，使用 document.getElementById返回audio 对象。play和pause方法用于提供播放控制。检索button 对象以便可以在“播放”和“暂停”之间切换按钮标签，具体情况取决于audio 对象的paused属性的状态。 
+       	每次调用 "playAudio" 函数时都会检查该状态。 如果音频文件正在播放，则paused属性返回false，并且调用pause方法来暂停播放。按钮标签也设置为“播放”。</p>
+       	<p>如果文件已暂停，则paused属性返回true，并且调用play方法，按钮标签更新为“暂停”。第一次加载文件时，即使尚未显式调用 pause方法，paused属性也返回 true（播放已暂停）。</p>
+       	<p>在HTML代码中，默认情况下按钮处于禁用状态。当页面加载时，在主体标记中使用 onload 事件调用checkSupport() 函数。如果 audio元素存在，则启用按钮。</p>
+       	<h4>在 JavaScript 中指定音频文件并管理播放</h4>
+       	<p>通过使用项目的HTML部分中的source标记来指定音频源文件。若要播放多个文件，则可以将audio对象的 src 属性设置为JavaScript中音频文件的 URL。</p>
+       	<p>单击“播放”按钮可能意味着用户已更改了音频文件或他们已暂停了当前文件。由于在更改音频文件源时调用 src 方法会初始化暂停的状态，因此 "playAudio" 函数必须指示用户何时想要更改文件。定义全局变量 "currentFile"，
+       	以便该变量可以跟踪当前正在播放的文件的URL。当用户单击“播放”按钮时，会将 "currentFile" 变量与 "audioURL.value" 指定的文本字段中的值进行比较。如果这些值不同，则将src 属性设置为新文件URL，更新"currentFile" 
+        变量，并调用load方法。</p>
+       	<p>当音频文件正在播放时，currentTime属性会跟踪播放在音频剪辑中的位置。通过更改currentTime的值，你可以快进或快退或重新启动播放。该示例包括三个用于调用rewindAudio、forwardAudio 和restartAudio 函数的新按钮。 
+        rewindAudio 和 forwardAudio函数将currentTime的值减少或增加30秒。你可以将增量值更改为更大或更小的跳跃幅度。在restartAudio 函数中，currentTime的值设置为零，即表示文件的开头。</p>
+       	<p>你也可以通过调整 playbackRate属性来更改音频播放速率。 playbackRate属性是播放速率的加倍器。playbackRate的值必须为正值，因为负值将导致错误。</p>
+       	<p> audio对象还支持诸如timeUpdate 事件之类的事件，这些事件用于跟踪文件的进度。</p>
+       	<p>你也可以通过调整playbackRate属性来更改音频播放速率。 playbackRate 属性是播放速率的加倍器。playbackRate 的值必须为正值，因为负值将导致错误。加速按钮每次向播放速率添加 1，所以视频开始时以正常速率播放，
+        然后每单击一次加速按钮，便会相应增加播放速率的倍数。每单击一次减速按钮，便会使播放速率减慢一倍。这里我们有意将播放速率的跳跃幅度调得很大，目的在于加强演示效果，用户可自行使用较小的增量。</p>
+</body>
+</html>
