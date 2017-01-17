@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>宋小宝总结</title>
+	</head>
+	<body>
+	   <h1><a href="">canvas画布</a></h1>
+	   <h3>canvas画布总结</h3>
+	   <p>1.canvas标签</p>
+	   <p>严禁使用CSS调整canvas画布的大小。</p>
+	   <p><canvas  width="600" height="600"></p>
+	   <p>您的破浏览器有不支持了！</p>
+	   <p></canvas></p>
+	   <p>2.canvas的属性</p>
+	   <p>Width用户设置canvas画板的宽度</p>
+	   <p>Height 用于设置canvas画板的高度。</p>
+	   <p>使用CSS可以设置canvas画布的显示大小无法设置其绘图面积，</p>
+	   <p>所以不推荐使用。</p>
+	   <p>3.canvas的方法 </p>
+	   <p>getContext() 用于获取canvas元素的绘图环境，所有绘图操作必</p>
+	   <p>须在绘图环境下操作绘图环境也叫做绘图上下文。 </p>
+	   <p>Canvas元素.getContext(‘2d’); 获取2D绘图环境</p>
+	   <p>4.绘图操作(绘图环境的成员 </p>
+	   <p>context.font属性  用于设置字体的风格大小和0字体类型等</p>
+	   <p>格式：context.font([粗体],[斜体],大小,字体)；</p>
+	   <p>该属性设置对描边文字和填充文字都有效</p>
+	   <p>context.fillStyle属性 用于设置填充类型的画笔的样式</p>
+	   <p>格式： context.fillStyle=’颜色值’</p>
+	   <p>所有CSS3的颜色类型都可以支持 </p>
+	   <p>context.strokeStyle属性  用于设置描边类型的画笔的样式</p>
+	   <p>格式：context.strokeStyle=’颜色’;</p>
+	   <p>注意：设置style时一般使用颜色设置，实际上可以使用渐变</p>
+	   <p>设置但是需要渐变对象。所以不叫strokeColor而是叫strokeStyle</p>
+	   <p>Context.fillText() 方法  用于使用填充画笔进行文字绘制</p>
+	   <p>格式：context.fillText(‘文字内容’,x坐标,y坐标);</p>
+	   <p>Context.strokeText()方法 用描边画笔进行文字绘制</p>
+	   <p>格式：context.strokeText(‘文字内容’,x坐标,y坐标);</p>
+       <p>Context.moveTo()  将画笔移动到指定的位置 </p>
+       <p>格式：context.moveTo(x1,y1);  </p>
+       <p>Context.lineTo()   将画笔从开始位置连线到结束位置</p>
+       <p>格式:contxt.lineTo(x2,y2); </p>
+       <p>注意：使用路径操作时，绘制方法只是在内存中进行预先绘制，并没有实际操作到画布当中，如果需要画布中显示，则</p>
+       <p>需要封闭路径的相关操作.</p>
+       <p>Context.stroke() 使用描边画笔将路径绘制出来 </p>
+       <p>格式：Context.stroke()无参数</p>
+       <p>Context.textAlign=位置值</p>
+       <p>位置值： start   以文字的起始位置对齐 &nbsp;Center 以文字的中心位置对齐&nbsp;End    以文字的结束位置对齐</p>
+       <p>Context.textBaseLine属性  设置文字的垂直对齐方式（基于起始位置）</p>
+       <p>Context.textBaseline=位置值</p>
+       <p>位置值:Top    顶部对齐&nbsp;Middle  剧中对齐&nbsp;Bottom 底部对齐</p>
+       <p>矩形绘制:Context.fillRect()  填充一个矩形(实心) Context.fillRect(起始x,起始y,宽度,高度); </p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Context.strokeRect()  描边一个矩形(空心) &nbsp;Context.strokeRect(起始x,起始y,宽度,高度); </p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Context.clearRect() 清除一个矩形区域内的内容&nbsp;Context.clearRect(起始x,起始y,宽度,高度));</p>
+       <p>圆型绘制：Context.arc();  绘制圆弧&nbsp;Context.arc(圆心x,圆心y,半径,开始弧度,结束弧度,绘制方向); </p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Context.arcTo(); 绘制一条圆弧路径&nbsp;context.arcTo(第二个点x,第二个点y,第三个点x,第三个点y,半径)</p>
+       <p>注意：arcTo是应用切线绘制弧，需要两条相交的线段，一般由moveTo的坐标和第二个点的坐标构成第一条线，第二个点坐</p>
+       <p>标和第三个点坐标构成第二条线。</p>
+       <p>路径方法：beginPath() 开始一条新路径  ，通常第一个路径不需要使用&nbsp;closePath() 关闭一条路径，通常不使用，因为stroke()、fill()、clip()都可以关闭路径。</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;moveTo()  将画笔移动到指定位置 &nbsp;lineTo()  将路径连线至指定位置&nbsp;rect()  绘制一个矩形路径</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill() 填充一个路径&nbsp;stroke()  描边一个路径&nbsp;clip()  限定一个路径</p>
+       <p>区域方法：fillRect()  填充一个矩形区域 =  rect+fill</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strokeRect() 描边一个矩形区域= rect +stroke</p>
+       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clearRect() 清除一个矩形区域内的内容</p>
+	</body>
+</html>
